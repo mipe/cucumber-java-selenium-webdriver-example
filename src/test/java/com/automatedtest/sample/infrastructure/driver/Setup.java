@@ -17,6 +17,8 @@ public class Setup {
         if (browser == null) {
             browser = "chrome";
         }
+        
+        System.setProperty("webdriver.chrome.driver","C:\\webdriver\\chromedriver.exe");
         switch (browser) {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();

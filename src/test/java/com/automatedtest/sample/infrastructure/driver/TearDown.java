@@ -26,6 +26,6 @@ public class TearDown {
 
         final byte[] screenshot = ((TakesScreenshot) driver)
                 .getScreenshotAs(OutputType.BYTES);
-        scenario.embed(screenshot, "image/png");
+        scenario.attach(screenshot, "image/png", "screenshot");
     }
 }

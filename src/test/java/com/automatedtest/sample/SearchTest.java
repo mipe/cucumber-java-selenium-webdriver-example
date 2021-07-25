@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/resources/com/automatedtest/sample/Search.feature"},
-        strict = false, plugin = {"pretty",
+        plugin = {"pretty",
         "json:target/cucumber_json_reports/search.json",
         "html:target/search-html"},
         glue = {"com.automatedtest.sample.infrastructure.driver",
