@@ -1,18 +1,20 @@
 package com.automatedtest.sample.homepage;
 
-import com.automatedtest.sample.basepage.BasePage;
-import org.junit.Assert;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.automatedtest.sample.basepage.BasePage;
+
 
 public class HomePage extends BasePage{
 
-    private static final String HOME_PAGE_URL = "https://www.google.";
+    private static final String HOME_PAGE_URL = "https://duckduckgo.com/";
 
-    @FindBy(css = "#hplogo")
+    @FindBy(css = "#logo_homepage_link")
     private WebElement logo;
 
     @FindBy(css = "input[name=q]")
@@ -23,9 +25,10 @@ public class HomePage extends BasePage{
         PageFactory.initElements(driver, this);
     }
 
-    void goToHomePage(String country){
-        driver.get(HOME_PAGE_URL + country);
+    void goToHomePage(){
+        driver.get(HOME_PAGE_URL);
         wait.forLoading(5);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     void checkLogoDisplay() {

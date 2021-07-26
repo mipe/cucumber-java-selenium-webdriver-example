@@ -10,7 +10,7 @@ public class Setup {
 
     public static WebDriver driver;
 
-    @Before
+    @Before("@webdriver")
     public void setWebDriver() throws Exception {
 
         String browser = System.getProperty("browser");

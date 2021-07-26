@@ -1,18 +1,18 @@
 package com.automatedtest.sample.searchresultpage;
 
-import com.automatedtest.sample.basepage.BasePage;
-import org.junit.Assert;
+import java.util.List;
+import java.util.stream.IntStream;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
-import java.util.stream.IntStream;
+import com.automatedtest.sample.basepage.BasePage;
 
 public class SearchResultPage extends BasePage {
 
-    private static final String RESULTS_TITLE_SELECTOR = "a h3";
+    private static final String RESULTS_TITLE_SELECTOR = "h2 a";
 
     @FindBy(css = RESULTS_TITLE_SELECTOR)
     private List<WebElement> results;
